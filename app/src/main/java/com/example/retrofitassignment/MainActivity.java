@@ -41,9 +41,9 @@ public class MainActivity extends AppCompatActivity {
                 .addConverterFactory(GsonConverterFactory.create())
                 .build();
 
-        JsonPlaceHolderApi jsonPlaceHolderApi = retrofit.create(JsonPlaceHolderApi.class);
+        RetrofitAPI api = retrofit.create(RetrofitAPI.class);
 
-        Call<Data> call = jsonPlaceHolderApi.getData();
+        Call<Data> call = api.getData();
 
 
 

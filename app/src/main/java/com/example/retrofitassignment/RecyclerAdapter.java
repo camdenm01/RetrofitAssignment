@@ -66,23 +66,7 @@ public class RecyclerAdapter extends RecyclerView.Adapter<RecyclerAdapter.ViewHo
         @Override
         public void onClick(View view) {
             int position = getLayoutPosition();
-            String description = monsterList.get(position).getDescription();
-            String infoImage = monsterList.get(position).getImage();
-            List<String> locationsList = monsterList.get(position).getCommonLocations();
-            List<String> dropsList = monsterList.get(position).getDrops();
-            String drops = "No information found yet!";
-            if(dropsList != null && dropsList.size() != 0){
-                drops = dropsList.toString();
-            }
-            String locations = "No information found yet!";
-            if(locationsList != null) {
-                locations = locationsList.toString();
-            }
-            intent.putExtra("description", description);
-            intent.putExtra("image", infoImage);
-            intent.putExtra("locations", locations);
-            intent.putExtra("drops", drops);
-
+            intent.putExtra("id", monsterList.get(position).getId());
             context.startActivity(intent);
 
         }
