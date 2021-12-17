@@ -70,16 +70,29 @@ public class InfoActivity extends AppCompatActivity {
                 Monster monster = datum.getMonster();
                 name = monster.getName().toUpperCase();
                 description = monster.getDescription();
-                locations = monster.getCommonLocations().toString();
-                locations = locations.substring(1, locations.length() -1); //remove brackets from around string
-                drops = monster.getDrops().toString();
-                drops = drops.substring(1, drops.length()-1);//removes brackets from string
+                if (monster.getCommonLocations() != null) {
+                    locations = monster.getCommonLocations().toString();
+                    locations = locations.substring(1, locations.length() -1); //remove brackets from around string
+                }
+                if (monster.getDrops() != null) {
+                    drops = monster.getDrops().toString();
+                    drops = drops.substring(1, drops.length()-1);//removes brackets from string
+                }
                 image = monster.getImage();
                 setTitle(name);
                 descriptionText.setText(description);
-                locationText.setText("Found in: " + locations);
-                dropsText.setText("Drops: " + drops);
                 Picasso.with(InfoActivity.this).load(image).into(imageView);
+
+                //location and drop list may be null as some creatures do not have this info
+                if(locations == null || locations.length() == 0) locationText.setText("Locations: No information yet");
+                else {
+                    locationText.setText("Found in: " + locations);
+                }
+                if(drops == null || drops.length() == 0) dropsText.setText("Drops: No information yet");
+                else {
+                    dropsText.setText("Drops: " + drops);
+                }
+
 
 
             }

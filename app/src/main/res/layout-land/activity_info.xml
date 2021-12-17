@@ -4,6 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="@drawable/img"
     tools:context=".InfoActivity">
 
     <ImageView
@@ -21,9 +22,10 @@
         android:id="@+id/info_text"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
+        android:background="#99FFFFFF"
         android:paddingLeft="5dp"
         android:paddingRight="5dp"
-        android:text="TextView"
+        android:text=""
         android:textAlignment="center"
         android:textColor="@android:color/black"
         android:textSize="15sp"
@@ -33,10 +35,12 @@
 
     <TextView
         android:id="@+id/info_locations"
-        android:layout_width="431dp"
+        android:layout_width="0dp"
         android:layout_height="wrap_content"
-        android:text="TextView"
+        android:background="#99FFFFFF"
+        android:text=""
         android:textAlignment="center"
+        android:textColor="@android:color/black"
         app:layout_constraintBottom_toTopOf="@+id/info_drops"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toEndOf="@+id/info_image"
@@ -46,8 +50,10 @@
         android:id="@+id/info_drops"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
-        android:text="TextView"
+        android:background="#99FFFFFF"
+        android:text=""
         android:textAlignment="center"
+        android:textColor="@android:color/black"
         app:layout_constraintBottom_toBottomOf="@+id/info_image"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toEndOf="@+id/info_image" />
